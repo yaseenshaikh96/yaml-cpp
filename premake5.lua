@@ -1,10 +1,10 @@
 project "yaml-cpp"
 	kind "StaticLib"
 	language "C++"
-	cppdialect "C++17"
-	staticruntime "off"
+	cppdialect "C++20"
+	staticruntime "on"
 	
-  targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
@@ -13,6 +13,11 @@ project "yaml-cpp"
 		"src/**.cpp",
 		
 		"include/**.h"
+	}
+
+	defines
+	{
+		"YAML_CPP_STATIC_DEFINE"
 	}
 
 	includedirs
