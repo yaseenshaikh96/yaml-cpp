@@ -4,8 +4,9 @@ project "yaml-cpp"
 	cppdialect "C++20"
 	staticruntime "on"
 	
-	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
-	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
+    	targetdir ( "%{wks.location}/bin/" .. outputdir)
+    	objdir ( "%{wks.location}/bin-int/" .. outputdir)
+
 
 	files
 	{
